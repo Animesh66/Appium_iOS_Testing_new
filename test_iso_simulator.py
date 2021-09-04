@@ -1,3 +1,4 @@
+import time
 from appium import webdriver
 
 desired_cap = dict(
@@ -9,3 +10,6 @@ desired_cap = dict(
 )
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
+driver.implicitly_wait(10)
+time.sleep(5)
+driver.quit()
