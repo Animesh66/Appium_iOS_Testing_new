@@ -17,7 +17,8 @@ element = driver.find_element_by_xpath("(//XCUIElementTypeStaticText[@name='0'])
 increment = driver.find_element_by_xpath("(//XCUIElementTypeButton[@name='Increment'])[1]")
 decrement = driver.find_element_by_xpath("(//XCUIElementTypeButton[@name='Decrement'])[1]")
 value = element.get_attribute('value')
-for value in range(5):
+i = int(value)  # converting the string value to integer
+for i in range(5):
     increment.click()
 time.sleep(2)
 driver.quit()
