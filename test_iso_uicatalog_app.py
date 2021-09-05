@@ -6,7 +6,7 @@ desired_cap = dict(
     platformVersion='14.5',
     deviceName='iPhone 12 Pro',
     udid='A97D4189-AB2F-490F-B1CC-FBABDC54259C',
-    app='/Users/animeshmukherjee/PycharmProjects/pythonProject/Appium_iOS_Testing/app/simulator/IntegrationApp.app',
+    bundleId='com.Animesh.apple-samplecode.UICatalog',
     noRest=True
 )
 
