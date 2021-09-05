@@ -13,8 +13,8 @@ desired_cap = dict(
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
 driver.implicitly_wait(10)
 driver.find_element_by_accessibility_id('Switches').click()
-default_switch = driver.find_elements_by_class_name('XCUIElementTypeSwitch')
-default_switch_value = default_switch.__getattribute__('value')
+default_switch = driver.find_element_by_class_name('XCUIElementTypeSwitch')
+default_switch_value = default_switch.get_attribute('value')
 print(default_switch_value)
 if default_switch_value == '1':
     default_switch.click()
