@@ -12,12 +12,12 @@ desired_cap = dict(
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
 driver.implicitly_wait(10)
-driver.find_element_by_accessibility_id('Switches').click()
-default_switch = driver.find_element_by_class_name('XCUIElementTypeSwitch')
-default_switch_value = default_switch.get_attribute('value')
-print(default_switch_value)
-if default_switch_value == '1':
-    default_switch.click()
-print(default_switch_value)
+driver.find_element_by_accessibility_id('Steppers').click()
+element = driver.find_element_by_xpath("(//XCUIElementTypeStaticText[@name='0'])[1]")
+increment = driver.find_element_by_xpath("(//XCUIElementTypeButton[@name='Increment'])[1]")
+decrement = driver.find_element_by_xpath("(//XCUIElementTypeButton[@name='Decrement'])[1]")
+value = element.get_attribute('value')
+for value in range(5):
+    increment.click()
 time.sleep(2)
 driver.quit()
