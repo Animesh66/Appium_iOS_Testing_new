@@ -12,5 +12,9 @@ desired_cap = dict(
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
 driver.implicitly_wait(10)
-time.sleep(5)
+driver.find_element_by_xpath("//XCUIElementTypeStaticText[@name='Alerts']").click()
+driver.find_element_by_xpath("//XCUIElementTypeStaticText[@name='Create Sheet Alert']").click()
+read_text = driver.find_element_by_xpath("//XCUIElementTypeStaticText[@name='Magic Sheet']").text
+print(read_text)
+time.sleep(2)
 driver.quit()
