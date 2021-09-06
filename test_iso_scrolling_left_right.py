@@ -22,5 +22,6 @@ while not driver.find_element_by_accessibility_id('Settings').is_displayed():
     i += 1
 driver.find_element_by_accessibility_id('Settings')
 driver.find_element_by_accessibility_id('Accessibility')
+driver.find_element_by_accessibility_id('Display & Text Size')
 time.sleep(2)
 driver.quit()
