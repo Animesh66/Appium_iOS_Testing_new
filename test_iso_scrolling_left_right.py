@@ -18,8 +18,9 @@ driver.background_app(-1)
 action = TouchAction(driver)
 i = 0
 while not driver.find_element_by_accessibility_id('Settings').is_displayed():
-    action.press(x=24, y=172).wait(2000).move_to(x=285, y=172).perform()
+    action.press(x=23, y=180).wait(2000).move_to(x=280, y=180).perform()
     i += 1
+
 driver.find_element_by_accessibility_id('Settings')
 driver.find_element_by_accessibility_id('Accessibility')
 driver.find_element_by_accessibility_id('Display & Text Size')
