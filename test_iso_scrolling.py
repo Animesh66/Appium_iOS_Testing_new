@@ -1,5 +1,6 @@
 import time
 from appium import webdriver
+from appium.webdriver.common.touch_action import TouchAction
 
 desired_cap = dict(
     platformName='iOS',
@@ -11,6 +12,13 @@ desired_cap = dict(
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_cap)
 driver.implicitly_wait(10)
-element = driver.find_element_by_accessibility_id('Scrolling')
+element = driver.find_element_by_accessibility_id('Scrolling').click()
+driver.find_element_by_accessibility_id('TableView').click()
+action = TouchAction(driver)
+i = 0
+while not driver.find_element_by_accessibility_id('35').is_displayed():
+    action.press(x=20, y=751).wait(2000).move_to(x=20, y=267).perform()
+    i += 1
+
 time.sleep(2)
 driver.quit()
