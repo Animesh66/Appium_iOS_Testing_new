@@ -17,7 +17,7 @@ driver.find_element_by_accessibility_id('TableView').click()
 action = TouchAction(driver)
 i = 0
 while not driver.find_element_by_accessibility_id('35').is_displayed():
-    action.press(x=20, y=751).wait(2000).move_to(x=20, y=267).perform()
+    action.press(x=0, y=707).wait(2000).move_to(x=0, y=223).perform()
     i += 1
 
 time.sleep(2)
